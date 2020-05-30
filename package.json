@@ -1,0 +1,29 @@
+{
+  "name": "js-node-exp",
+  "version": "1.0.0",
+  "description": "Simple Todo App with MongoDB and Express.js",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gelbman20/js-node-exp.git"
+  },
+  "keywords": [
+    "js",
+    "mongodb",
+    "expressjs"
+  ],
+  "author": "gelbman20 <gelbman20@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gelbman20/js-node-exp/issues"
+  },
+  "homepage": "https://github.com/gelbman20/js-node-exp#readme"
+}
