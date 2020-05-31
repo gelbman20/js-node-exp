@@ -1,6 +1,15 @@
 let express = require('express')
+let MongoClient = require('mongodb').MongoClient
 
 let app = express()
+let db
+
+let connectionString = 'mongodb+srv://todoAppUser:optimization123@cluster0-peicj.mongodb.net/TodoApp?retryWrites=true&w=majority'
+const client = new MongoClient(connectionString, { useNewUrlParser: true })
+client.connect(err => {
+  db = client.db()
+  app.listen(3000)
+})
 
 app.use(express.urlencoded({ extended: false }))
 
@@ -57,8 +66,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/create-item', (req, res) => {
-  console.log('make this dynamic in a minute from now', req.body.item)
-  res.send('Thanks for submitting the form')
+  db.collection('items').insertOne({ text: req.body.item }, function () {
+    res.send('Thanks for submitting the form')
+  })
 })
-
-app.listen(3000)
